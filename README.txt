@@ -1,0 +1,1 @@
+Pak Highland Tech - Starter Store Demo\n\n1. Extract this ZIP file on your laptop.\n2. Open the folder.\n3. Double-click index.html to preview in your browser.\n4. Edit product names and prices in js/script.js.\n\nThis is a front-end demo only. It does not yet include real checkout, database, admin login, or courier integration.\n
