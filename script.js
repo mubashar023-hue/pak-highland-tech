@@ -48,3 +48,24 @@ function showCart() {
 
   alert("Total: Rs. " + total);
 }
+function displayProducts() {
+    const productList = document.getElementById("product-list");
+
+    if (!productList) return;
+
+    productList.innerHTML = "";
+
+    products.forEach(product => {
+        productList.innerHTML += `
+            <div class="product-card">
+                <h3>${product.name}</h3>
+                <p>Price: Rs. ${product.price}</p>
+                <button onclick="addToCart(${product.id})">
+                    Add to Cart
+                </button>
+            </div>
+        `;
+    });
+}
+
+displayProducts();
