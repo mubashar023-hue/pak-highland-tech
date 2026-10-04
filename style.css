@@ -11,3 +11,79 @@
   object-fit: contain;
   border-radius: 50%;
 }
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px #00000010;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #172331;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 70px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f5f8;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #172331;
+}
+
+.primary {
+  display: inline-block;
+  padding: 14px 25px;
+  background: #167347;
+  color: white;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.section {
+  padding: 50px 5%;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about {
+  padding: 40px 5%;
+  background: #e9f0ed;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #172331;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
