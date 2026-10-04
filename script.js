@@ -36,17 +36,29 @@ function updateCart() {
 }
 
 function showCart() {
-  if (cart.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price,
-    0
-  );
+    const total = cart.reduce(
+        (sum, item) => sum + item.price,
+        0
+    );
 
-  alert("Total: Rs. " + total);
+    let message = "Assalam-o-Alaikum! I want to place an order:\n\n";
+
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} - Rs. ${item.price}\n`;
+    });
+
+    message += `\nTotal: Rs. ${total}`;
+    message += "\n\nPlease confirm my order.";
+
+    const phone = "923018317217";
+    const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
 }
 function displayProducts() {
     const productList = document.getElementById("product-list");
