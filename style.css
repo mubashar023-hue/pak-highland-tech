@@ -87,3 +87,18 @@ footer {
     flex-wrap: wrap;
   }
 }
+/* Responsive Fix */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.products {
+  width: 100%;
+  box-sizing: border-box;
+}
