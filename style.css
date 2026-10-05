@@ -125,4 +125,7 @@ flex-direction: column;
   cursor: pointer;
   border: none;
   border-radius: 6px;
-margin-top: auto;}
+margin-top: auto;
+background: #0b5ed7;
+color: white;
+}
