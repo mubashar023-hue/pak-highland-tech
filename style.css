@@ -151,29 +151,9 @@ transition: background 0.3s ease, transform 0.2s ease;
 .product-card:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
-        gap: 16px;
-        padding: 10px;
-    }
-
-    .product-card {
-        padding: 12px;
-        border-radius: 12px;
-    }
-
-    .product-card img {
-        height: 220px;
-        width: 100%;
-        object-fit: contain;
-    }
-
-    .product-card button {
-     width: 100%;
+.product-card button {
+    width: 100%;
     padding: 12px;
     font-size: 16px;
-} 
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-    }
-} 
-}}
+}
+}   
