@@ -134,3 +134,8 @@ transition: background 0.3s ease, transform 0.2s ease;
     background: #084cbe;
     transform: translateY(-2px);
 }
+  @media (max-width: 768px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+}}
