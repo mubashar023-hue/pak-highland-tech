@@ -129,3 +129,6 @@ margin-top: auto;
 background: #0b5ed7;
 color: white;
 }
+.product-card button:hover {
+    background: #084cbe;
+}
