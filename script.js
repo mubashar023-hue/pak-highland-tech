@@ -72,9 +72,10 @@ function displayProducts() {
             <div class="product-card">
                 <h3>${product.name}</h3>
                 <p>Price: Rs. ${product.price}</p>
+               <img src="${product.image}" alt="${product.name}"> 
                 <button onclick="addToCart(${product.id})">
                     Add to Cart
-                </button>
+      </button>
             </div>
         `;
     });
