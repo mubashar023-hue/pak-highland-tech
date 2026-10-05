@@ -13,7 +13,8 @@ const products = [
   {
     id: 3,
     name: "Mobile Charger",
-    price: 1200
+    price: 1200,
+    image:"images/charger.jpg"
   }
 ];
 
