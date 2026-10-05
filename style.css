@@ -108,6 +108,8 @@ img {
   padding: 15px;
   border-radius: 12px;
   box-sizing: border-box;
+display: flex;
+flex-direction: column;
 }
 
 .product-card img {
@@ -123,4 +125,4 @@ img {
   cursor: pointer;
   border: none;
   border-radius: 6px;
-}
+margin-top: auto;}
