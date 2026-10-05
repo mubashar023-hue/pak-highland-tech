@@ -7,7 +7,8 @@ const products = [
   {
     id: 2,
     name: "Kitchen Chopper",
-    price: 1800
+    price:1800,
+    image:"images/chopper.jpg"
   },
   {
     id: 3,
