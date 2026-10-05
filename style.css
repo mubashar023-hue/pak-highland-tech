@@ -128,7 +128,7 @@ flex-direction: column;
 margin-top: auto;
 background: #0b5ed7;
 color: white;
-transition: background 0.3s ease;
+transition: background 0.3s ease, transform 0.2s ease;
   }
 .product-card button:hover {
     background: #084cbe;
