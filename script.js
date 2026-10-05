@@ -2,8 +2,8 @@ const products = [
   {
     id: 1,
     name: "Wireless Earbuds",
-    price: 2500
-  },
+    price: 2500,
+ image:"images/earbuds.jpg" },
   {
     id: 2,
     name: "Kitchen Chopper",
