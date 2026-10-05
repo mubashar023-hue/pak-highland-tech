@@ -136,7 +136,21 @@ transition: background 0.3s ease, transform 0.2s ease;
 }
 @media (max-width: 768px) {
     .products {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 10px;
+}
+
+.product-card {
+    padding: 14px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
         gap: 16px;
         padding: 10px;
     }
