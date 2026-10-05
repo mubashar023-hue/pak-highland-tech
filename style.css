@@ -132,4 +132,5 @@ transition: background 0.3s ease;
   }
 .product-card button:hover {
     background: #084cbe;
+    transform: translateY(-2px);
 }
