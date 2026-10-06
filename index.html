@@ -29,7 +29,42 @@
       <div class="products" id="product-list"></div>
     </section>
     <section class="about" id="about"><h2>One store, many everyday solutions.</h2><p>Pak Highland Tech is a starter storefront demo. Add your real products, prices and contact details before publishing.</p></section>
-  </main>
+<!-- Customer Order Form -->
+<div id="checkout-form" class="checkout-form">
+  <div class="checkout-box">
+
+    <button class="checkout-close" onclick="closeCheckout()">×</button>
+
+    <h2>Customer Details</h2>
+    <p>Please enter your details to place the order.</p>
+
+    <input
+      type="text"
+      id="customer-name"
+      placeholder="Your Name"
+      required
+    >
+
+    <input
+      type="tel"
+      id="customer-phone"
+      placeholder="Mobile Number"
+      required
+    >
+
+    <textarea
+      id="customer-address"
+      placeholder="Complete Address"
+      rows="4"
+      required
+    ></textarea>
+
+    <button class="confirm-order-btn" onclick="submitWhatsAppOrder()">
+      Confirm & Send Order on WhatsApp
+    </button>
+
+  </div>
+</div>  </main>
   <footer>© 2026 Pak Highland Tech · Store demo</footer>
   <script src="script.js"></script>
 </body>
