@@ -233,34 +233,33 @@ function submitWhatsAppOrder() {
         return;
     }
 
-    let message = "🛍️ PAK HIGHLAND TECH\n";
-    message += "━━━━━━━━━━━━━━━━━━\n";
-    message += "📦 NEW ORDER\n";
-    message += "━━━━━━━━━━━━━━━━━━\n\n";
+  let message = "PAK HIGHLAND TECH\n";
+message += "========================\n";
+message += "NEW ORDER\n";
+message += "========================\n\n";
 
-    let total = 0;
+let total = 0;
 
-    cart.forEach((item) => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
+cart.forEach((item) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
 
-        message += `🛒 ${item.name}\n`;
-        message += `   Quantity: ${item.quantity}\n`;
-        message += `   Price: Rs. ${item.price}\n`;
-        message += `   Subtotal: Rs. ${subtotal}\n\n`;
-    });
+    message += `${item.name}\n`;
+    message += `Quantity: ${item.quantity}\n`;
+    message += `Price: Rs. ${item.price}\n`;
+    message += `Subtotal: Rs. ${subtotal}\n\n`;
+});
 
-    message += "━━━━━━━━━━━━━━━━━━\n";
-    message += `💰 TOTAL: Rs. ${total}\n`;
-    message += "━━━━━━━━━━━━━━━━━━\n\n";
+message += "========================\n";
+message += `TOTAL: Rs. ${total}\n`;
+message += "========================\n\n";
 
-    message += "👤 CUSTOMER DETAILS\n";
-    message += `Name: ${name}\n`;
-    message += `Mobile: ${phone}\n`;
-    message += `Address: ${address}\n\n`;
+message += "CUSTOMER DETAILS\n";
+message += `Name: ${name}\n`;
+message += `Mobile: ${phone}\n`;
+message += `Address: ${address}\n\n`;
 
-    message += "Please confirm my order.";
-
+message += "Please confirm my order.";
     const phoneNumber = "923018317217";
 
     const whatsappURL =
