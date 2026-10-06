@@ -224,40 +224,49 @@ function closeCheckout() {
 }
 
 function submitWhatsAppOrder() {
-  const name = document.getElementById("customer-name").value.trim();
-  const phone = document.getElementById("customer-phone").value.trim();
-  const address = document.getElementById("customer-address").value.trim();
+    const name = document.getElementById("customer-name").value.trim();
+    const phone = document.getElementById("customer-phone").value.trim();
+    const address = document.getElementById("customer-address").value.trim();
 
-  if (!name || !phone || !address) {
-    alert("Please enter your name, mobile number and complete address.");
-    return;
-  }
+    if (!name || !phone || !address) {
+        alert("Please enter your name, mobile number and complete address.");
+        return;
+    }
 
-  let message = "Assalam-o-Alaikum! I want to place an order:\n\n";
-  let total = 0;
+    let message = "🛍️ PAK HIGHLAND TECH\n";
+    message += "━━━━━━━━━━━━━━━━━━\n";
+    message += "📦 NEW ORDER\n";
+    message += "━━━━━━━━━━━━━━━━━━\n\n";
 
-  cart.forEach((item) => {
-    const subtotal = item.price * item.quantity;
-    total += subtotal;
+    let total = 0;
 
-    message += `${item.name} - Qty: ${item.quantity} - Rs. ${subtotal}\n`;
-  });
+    cart.forEach((item) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
 
-  message += `\nTotal: Rs. ${total}`;
-  message += `\n\nCustomer Name: ${name}`;
-  message += `\nMobile Number: ${phone}`;
-  message += `\nComplete Address: ${address}`;
-  message += "\n\nPlease confirm my order.";
+        message += `🛒 ${item.name}\n`;
+        message += `   Quantity: ${item.quantity}\n`;
+        message += `   Price: Rs. ${item.price}\n`;
+        message += `   Subtotal: Rs. ${subtotal}\n\n`;
+    });
 
-  const phoneNumber = "923018317217";
+    message += "━━━━━━━━━━━━━━━━━━\n";
+    message += `💰 TOTAL: Rs. ${total}\n`;
+    message += "━━━━━━━━━━━━━━━━━━\n\n";
 
-  const whatsappURL =
-    "https://wa.me/" +
-    phoneNumber +
-    "?text=" +
-    encodeURIComponent(message);
+    message += "👤 CUSTOMER DETAILS\n";
+    message += `Name: ${name}\n`;
+    message += `Mobile: ${phone}\n`;
+    message += `Address: ${address}\n\n`;
 
-  window.open(whatsappURL, "_blank");
+    message += "Please confirm my order.";
+
+    const phoneNumber = "923018317217";
+
+    const whatsappURL =
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
 }
 /* =========================
    START STORE
