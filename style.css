@@ -440,3 +440,19 @@ transition: background 0.3s ease, transform 0.2s ease;
         font-size: 18px;
     }
 }
+/* FIX CART BUTTON CLICK */
+
+.cart-box {
+    z-index: 9999;
+}
+
+.checkout-btn,
+.close-cart-btn {
+    position: relative;
+    z-index: 10001;
+    pointer-events: auto;
+}
+
+.checkout-form {
+    z-index: 10000;
+}
