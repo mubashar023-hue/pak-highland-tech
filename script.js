@@ -203,11 +203,16 @@ function closeCart() {
 }
 
 function checkoutWhatsApp() {
-  const form = document.getElementById("checkout-form");
+    const cartBox = document.querySelector(".cart-box");
+    const form = document.getElementById("checkout-form");
 
-  if (form) {
-    form.classList.add("show");
-  }
+    if (cartBox) {
+        cartBox.remove();
+    }
+
+    if (form) {
+        form.classList.add("show");
+    }
 }
 
 function closeCheckout() {
