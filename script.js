@@ -182,25 +182,56 @@ function closeCart() {
 }
 
 function checkoutWhatsApp() {
-    let message = "Assalam-o-Alaikum! I want to place an order:\n\n";
-    let total = 0;
+  const form = document.getElementById("checkout-form");
 
-    cart.forEach((item) => {
-        let subtotal = item.price * item.quantity;
-        total += subtotal;
+  if (form) {
+    form.classList.add("show");
+  }
+}
 
-        message += `${item.name} - Qty: ${item.quantity} - Rs. ${subtotal}\n`;
-    });
+function closeCheckout() {
+  const form = document.getElementById("checkout-form");
 
-    message += `\nTotal: Rs. ${total}`;
-    message += "\n\nPlease confirm my order.";
+  if (form) {
+    form.classList.remove("show");
+  }
+}
 
-    const phone = "923018317217";
+function submitWhatsAppOrder() {
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const address = document.getElementById("customer-address").value.trim();
 
-    const whatsappURL =
-        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+  if (!name || !phone || !address) {
+    alert("Please enter your name, mobile number and complete address.");
+    return;
+  }
 
-    window.open(whatsappURL, "_blank");
+  let message = "Assalam-o-Alaikum! I want to place an order:\n\n";
+  let total = 0;
+
+  cart.forEach((item) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+
+    message += `${item.name} - Qty: ${item.quantity} - Rs. ${subtotal}\n`;
+  });
+
+  message += `\nTotal: Rs. ${total}`;
+  message += `\n\nCustomer Name: ${name}`;
+  message += `\nMobile Number: ${phone}`;
+  message += `\nComplete Address: ${address}`;
+  message += "\n\nPlease confirm my order.";
+
+  const phoneNumber = "923018317217";
+
+  const whatsappURL =
+    "https://wa.me/" +
+    phoneNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
 }
 /* =========================
    START STORE
