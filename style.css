@@ -455,4 +455,120 @@ transition: background 0.3s ease, transform 0.2s ease;
 
 .checkout-form {
     z-index: 10000;
+}/* =================================
+   PROFESSIONAL CUSTOMER CHECKOUT
+   ================================= */
+
+.checkout-form {
+    background: rgba(7, 24, 43, 0.72);
+    backdrop-filter: blur(6px);
+    padding: 20px;
+}
+
+.checkout-box {
+    width: min(94%, 520px);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    border: 1px solid #e7edf3;
+}
+
+.checkout-box h2 {
+    margin: 0 0 8px;
+    color: #172331;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.checkout-box p {
+    color: #667085;
+    margin-bottom: 22px;
+}
+
+.checkout-box label {
+    display: block;
+    margin: 16px 0 7px;
+    color: #172331;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.checkout-box input,
+.checkout-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    border: 1px solid #d6dee8;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #172331;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.checkout-box input:focus,
+.checkout-box textarea:focus {
+    border-color: #159447;
+    box-shadow: 0 0 0 3px rgba(21, 148, 71, 0.12);
+}
+
+.checkout-box textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.checkout-close {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f4f7;
+    color: #172331;
+    font-size: 24px;
+    cursor: pointer;
+    float: right;
+}
+
+.confirm-order-btn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 13px;
+    background: #16a34a;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.22);
+}
+
+.confirm-order-btn:hover {
+    background: #12813c;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .checkout-form {
+        padding: 12px;
+    }
+
+    .checkout-box {
+        width: 100%;
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .checkout-box h2 {
+        font-size: 23px;
+    }
+
+    .confirm-order-btn {
+        font-size: 16px;
+    }
 }
