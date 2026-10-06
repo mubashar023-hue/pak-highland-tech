@@ -237,6 +237,10 @@ function submitWhatsAppOrder() {
 message += "========================\n";
 message += "NEW ORDER\n";
 message += "========================\n\n";
+message += "CUSTOMER DETAILS\n";
+message += `Name: ${name}\n`;
+message += `Mobile: ${phone}\n`;
+message += `Address: ${address}\n\n`;
 
 let total = 0;
 
@@ -254,10 +258,6 @@ message += "========================\n";
 message += `TOTAL: Rs. ${total}\n`;
 message += "========================\n\n";
 
-message += "CUSTOMER DETAILS\n";
-message += `Name: ${name}\n`;
-message += `Mobile: ${phone}\n`;
-message += `Address: ${address}\n\n`;
 
 message += "Please confirm my order.";
     const phoneNumber = "923018317217";
