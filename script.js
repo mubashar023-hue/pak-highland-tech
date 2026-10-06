@@ -16,7 +16,12 @@ const products = [
         name: "Mobile Charger",
         price: 1200,
         image: "images/charger.jpg"
-    }
+    },{
+    id: 4,
+    name: "Smart LED Light",
+    price: 1500,
+    image: "images/led-light.jpg"
+},
 ];
 
 let cart = JSON.parse(localStorage.getItem("pakHighlandCart")) || [];
