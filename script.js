@@ -162,6 +162,27 @@ function showCart() {
     `;
 
     document.body.insertAdjacentHTML("beforeend", cartHTML);
+}function displayProducts() {
+  const productList = document.getElementById("product-list");
+
+  if (!productList) return;
+
+  productList.innerHTML = "";
+
+  products.forEach((product) => {
+    productList.innerHTML += `
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.name}">
+        <div class="product-info">
+          <h3>${product.name}</h3>
+          <p class="product-price">Rs. ${product.price}</p>
+          <button onclick="addToCart(${product.id})">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    `;
+  });
 }function changeQuantity(index, change) {
     cart[index].quantity += change;
 
