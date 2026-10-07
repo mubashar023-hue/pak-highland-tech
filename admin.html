@@ -276,9 +276,13 @@ value==="Shipped" ? 1 : 0;
 
 document.getElementById("delivered").innerText=
 value==="Delivered" ? 1 : 0;
-
+localStorage.setItem("orderStatus", value);
 }
+const savedStatus = localStorage.getItem("orderStatus");
 
+if(savedStatus){
+    setStatus(savedStatus);
+}
 function openWhatsApp(){
 
 let phone="923018317217";
