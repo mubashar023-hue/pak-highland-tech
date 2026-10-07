@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pak Highland Tech | Admin Orders</title>
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7f6;
+    color: #1f2937;
+}
+
+.header {
+    background: #075e54;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.header p {
+    margin: 6px 0 0;
+    opacity: .9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    background: white;
+    padding: 18px 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.stat strong {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.orders {
+    display: grid;
+    gap: 15px;
+}
+
+.order {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.order-id {
+    font-weight: bold;
+    color: #075e54;
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background: #fff3cd;
+    color: #856404;
+}
+
+.customer {
+    line-height: 1.8;
+}
+
+.customer strong {
+    color: #111827;
+}
+
+.product {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.total {
+    margin-top: 12px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #075e54;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.actions button {
+    border: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.confirm {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.ship {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.deliver {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.cancel {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.whatsapp {
+    background: #25d366;
+    color: white;
+}
+
+@media (max-width: 700px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 400px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>PAK HIGHLAND TECH</h1>
+    <p>Admin Order Dashboard</p>
+</header>
+
+<main class="container">
+
+<section class="stats">
+    <div class="stat">
+        <strong id="totalOrders">1</strong>
+        Total Orders
+    </div>
+
+    <div class="stat">
+        <strong id="pendingOrders">1</strong>
+        Pending
+    </div>
+
+    <div class="stat">
+        <strong id="confirmedOrders">0</strong>
+        Confirmed
+    </div>
+
+    <div class="stat">
+        <strong id="shippedOrders">0</strong>
+        Shipped
+    </div>
+
+    <div class="stat">
+        <strong id="deliveredOrders">0</strong>
+        Delivered
+    </div>
+</section>
+
+<section class="orders">
+
+<div class="order" id="order1">
+
+    <div class="order-header">
+        <div class="order-id">Order #PHT-0001</div>
+        <div class="status" id="status1">Pending</div>
+    </div>
+
+    <div class="customer">
+        <strong>Customer Details</strong><br>
+        Name: Muhammad
