@@ -1,3 +1,6 @@
+const SUPABASE_URL = "https://bjcjpmnafceabtxwmxcp.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "اپنی Publishable Key یہاں پیسٹ کریں";
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 const products = [
     {
         id: 1,
