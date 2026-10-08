@@ -198,67 +198,7 @@ Delivered
 
 </div>
 
-<div class="order">
-
-<div class="order-top">
-<div class="order-id">Order #PHT-0001</div>
-<div class="status" id="status">Pending</div>
-</div>
-
-<div class="section">
-<h3>Customer Details</h3>
-
-<div class="details">
-<strong>Name:</strong> Muhammad Mubashar<br>
-<strong>Mobile:</strong> 03018317217<br>
-<strong>Address:</strong> Gts Chowk Jhelum
-</div>
-
-</div>
-
-<div class="section">
-<h3>Order Details</h3>
-
-<div class="product">
-<strong>Product:</strong> Smart LED Light<br>
-<strong>Quantity:</strong> 1<br>
-<strong>Price:</strong> Rs. 1500<br>
-<strong>Subtotal:</strong> Rs. 1500
-</div>
-
-<div class="total">
-Total: Rs. 1500
-</div>
-
-</div>
-
-<div class="buttons">
-
-<button class="confirm" onclick="setStatus('Confirmed')">
-Confirm
-</button>
-
-<button class="ship" onclick="setStatus('Shipped')">
-Shipped
-</button>
-
-<button class="deliver" onclick="setStatus('Delivered')">
-Delivered
-</button>
-
-<button class="cancel" onclick="setStatus('Cancelled')">
-Cancel
-</button>
-
-<button class="whatsapp" onclick="openWhatsApp()">
-WhatsApp
-</button>
-
-</div>
-
-</div>
-
-</div>
+<div id="orders-container"></div>
 
 <script>
 const SUPABASE_URL =  "https://bjcjpmnafceabtxwmxcp.supabase.co";
@@ -268,7 +208,97 @@ const SUPABASE_KEY = "sb_publishable_9Gn0lqTp2Cb6SPHuG7SLCw_yhe56YS7";
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
-);
+);async function loadOrders() {
+    const container = document.getElementById("orders-container");
+
+    const { data, error } = await supabaseClient
+        .from("orders")
+        .select("*")
+        .order("id", { ascending: false });
+
+    if (error) {
+        console.error("Orders load error:", error);
+        container.innerHTML = "<p>Orders could not be loaded.</p>";
+        return;
+    }
+
+    container.innerHTML = "";
+
+    data.forEach((order) => {
+
+        const orderBox = document.createElement("div");
+        orderBox.className = "order";
+
+        orderBox.innerHTML = `
+            <div class="order-top">
+                <div class="order-id">Order #${order.id}</div>
+                <div class="status">${order.status || "pending"}</div>
+            </div>
+
+            <div class="section">
+                <h3>Customer Details</h3>
+
+                <div class="details">
+                    <strong>Name:</strong> ${order.customer_name || ""}<br>
+                    <strong>Mobile:</strong> ${order.customer_mobile || ""}<br>
+                    <strong>Address:</strong> ${order.customer_address || ""}
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Order Details</h3>
+
+                <div class="product">
+                    <strong>Product:</strong> ${order.product_name || ""}<br>
+                    <strong>Quantity:</strong> ${order.quantity || 0}<br>
+                    <strong>Price:</strong> Rs. ${order.price || 0}<br>
+                    <strong>Subtotal:</strong> Rs. ${order.subtotal || 0}
+                </div>
+
+                <div class="total">
+                    Total: Rs. ${order.subtotal || 0}
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button onclick="updateOrderStatus(${order.id}, 'confirmed')">
+                    Confirm
+                </button>
+
+                <button onclick="updateOrderStatus(${order.id}, 'shipped')">
+                    Shipped
+                </button>
+
+                <button onclick="updateOrderStatus(${order.id}, 'delivered')">
+                    Delivered
+                </button>
+
+                <button onclick="updateOrderStatus(${order.id}, 'cancelled')">
+                    Cancel
+                </button>
+            </div>
+        `;
+
+        container.appendChild(orderBox);
+    });
+}
+
+
+async function updateOrderStatus(id, status) {
+
+    const { error } = await supabaseClient
+        .from("orders")
+        .update({ status: status })
+        .eq("id", id);
+
+    if (error) {
+        console.error("Status update error:", error);
+        alert("Status could not be updated.");
+        return;
+    }
+
+    loadOrders();
+}
 function setStatus(value){
 
 document.getElementById("status").innerText=value;
