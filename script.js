@@ -232,7 +232,7 @@ function closeCheckout() {
   }
 }
 
-function submitWhatsAppOrder() {
+async function submitWhatsAppOrder() {
     const name = document.getElementById("customer-name").value.trim();
     const phone = document.getElementById("customer-phone").value.trim();
     const address = document.getElementById("customer-address").value.trim();
@@ -262,7 +262,26 @@ cart.forEach((item) => {
     message += `Price: Rs. ${item.price}\n`;
     message += `Subtotal: Rs. ${subtotal}\n\n`;
 });
+const orderRows = cart.map((item) => ({
+        customer_name: name,
+        customer_mobile: phone,
+        customer_address: address,
+        product_name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+        subtotal: item.price * item.quantity,
+        status: "pending"
+    }));
 
+    const { error } = await supabaseClient
+        .from("orders")
+        .insert(orderRows);
+
+    if (error) {
+        console.error("Supabase order error:", error);
+        alert("Order could not be saved. Please try again.");
+        return;
+    }
 message += "========================\n";
 message += `TOTAL: Rs. ${total}\n`;
 message += "========================\n\n";
