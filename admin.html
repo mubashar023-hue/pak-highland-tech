@@ -208,7 +208,8 @@ const SUPABASE_KEY = "sb_publishable_9Gn0lqTp2Cb6SPHuG7SLCw_yhe56YS7";
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
-);async function loadOrders() {
+);
+  async function loadOrders() {
     const container = document.getElementById("orders-container");
 
     const { data, error } = await supabaseClient
