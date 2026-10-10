@@ -317,14 +317,6 @@ window.open(
 
 }
 
-</script>
-  <div id="admin-login" style="max-width:400px;margin:30px auto;padding:20px;background:white;border-radius:12px;">
-  <h2>Admin Login</h2>
-  <input id="admin-email" type="email" placeholder="Admin Email" style="width:100%;padding:12px;margin:8px 0;">
-  <input id="admin-password" type="password" placeholder="Password" style="width:100%;padding:12px;margin:8px 0;">
-  <button onclick="adminLogin()">Sign In</button>
-  <p id="login-message"></p>
-</div>
 async function adminLogin() {
     const email = document.getElementById("admin-email").value.trim();
     const password = document.getElementById("admin-password").value;
@@ -346,5 +338,14 @@ async function adminLogin() {
     message.textContent = "Login successful!";
     await loadOrders();
 }
+</script>
+  <div id="admin-login" style="max-width:400px;margin:30px auto;padding:20px;background:white;border-radius:12px;">
+  <h2>Admin Login</h2>
+  <input id="admin-email" type="email" placeholder="Admin Email" style="width:100%;padding:12px;margin:8px 0;">
+  <input id="admin-password" type="password" placeholder="Password" style="width:100%;padding:12px;margin:8px 0;">
+  <button onclick="adminLogin()">Sign In</button>
+  <p id="login-message"></p>
+</div>
+
 </body>
 </html>
