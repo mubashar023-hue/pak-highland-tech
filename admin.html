@@ -223,6 +223,19 @@ const supabaseClient = supabase.createClient(
         return;
     }
 
+    document.getElementById("total").textContent = data.length;
+
+document.getElementById("pending").textContent =
+    data.filter(order => (order.status || "pending").toLowerCase() === "pending").length;
+
+document.getElementById("confirmed").textContent =
+    data.filter(order => (order.status || "pending").toLowerCase() === "confirmed").length;
+
+document.getElementById("shipped").textContent =
+    data.filter(order => (order.status || "pending").toLowerCase() === "shipped").length;
+
+document.getElementById("delivered").textContent =
+    data.filter(order => (order.status || "pending").toLowerCase() === "delivered").length;
     container.innerHTML = "";
 
     data.forEach((order) => {
