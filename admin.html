@@ -350,6 +350,8 @@ async function adminLogin() {
 
     message.textContent = "Login successful!";
     await loadOrders();
+document.getElementById("admin-login").style.display = "none";
+document.getElementById("admin-dashboard").style.display = "block";
 }
 </script>
   <div id="admin-login" style="max-width:400px;margin:30px auto;padding:20px;background:white;border-radius:12px;">
